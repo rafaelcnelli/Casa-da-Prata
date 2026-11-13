@@ -1,0 +1,420 @@
+import type { Product } from '../types/commerce';
+
+export const CASA_DA_PRATA_LOGO = '/assets/aistudio/image_4e988782.png';
+
+export const MOCK_PRODUCTS: Product[] = [
+  {
+    id: 'gid://shopify/Product/925001',
+    title: 'Anel de Prata 925 com Pedra Natural Lapidada',
+    handle: 'anel-prata-925-pedra-natural',
+    category: 'Anéis & Pedras Naturais',
+    description:
+      'Anel em Prata 925 de Lei com gema natural em lapidação retangular esmeralda, cravação segura de quatro garras e acabamento espelhado feito manualmente em nossa bancada.',
+    details: [
+      'Prata 925 legítima com garantia vitalícia do teor do metal',
+      'Pedra natural selecionada com lapidação retangular de alta joalheria',
+      'Acompanha certificado de autenticidade e estojo de veludo',
+      'Controle de estoque por aro sincronizado com o Bling ERP',
+    ],
+    createdAt: '2026-11-12T10:00:00Z',
+    images: [
+      {
+        id: 'gid://shopify/ProductImage/9011',
+        url: '/assets/products/anel-pedra-natural-1.png',
+        altText: 'Anel de Prata 925 com Pedra Natural Lapidada — Casa da Prata',
+      },
+      {
+        id: 'gid://shopify/ProductImage/9012',
+        url: '/assets/products/anel-pedra-natural-2.png',
+        altText: 'Detalhe da lapidação da Pedra Natural e cravação em Prata 925',
+      },
+    ],
+    variants: [
+      {
+        id: 'gid://shopify/ProductVariant/925101',
+        title: 'Aro 16',
+        sku: 'CDP-AN-AME-16',
+        price: 189.9,
+        compareAtPrice: 229.9,
+        availableForSale: true,
+        quantityAvailable: 4,
+      },
+      {
+        id: 'gid://shopify/ProductVariant/925102',
+        title: 'Aro 18',
+        sku: 'CDP-AN-AME-18',
+        price: 189.9,
+        compareAtPrice: 229.9,
+        availableForSale: true,
+        quantityAvailable: 2,
+      },
+      {
+        id: 'gid://shopify/ProductVariant/925103',
+        title: 'Aro 20',
+        sku: 'CDP-AN-AME-20',
+        price: 189.9,
+        compareAtPrice: 229.9,
+        availableForSale: false,
+        quantityAvailable: 0,
+      },
+    ],
+  },
+  {
+    id: 'gid://shopify/Product/925002',
+    title: 'Joia Prata 925 com Pedra Natural Abalone / Turquesa',
+    handle: 'joia-prata-925-pedra-abalone-turquesa',
+    category: 'Anéis & Pedras Naturais',
+    description:
+      'Peça autoral em Prata 925 legítima com moldura lisa espelhada e gema orgânica natural com nuances iridescentes únicas em cada exemplar.',
+    details: [
+      'Prata 925 maciça com acabamento polido de alta durabilidade',
+      'Pedra natural selecionada — cada gema possui desenho iridescente único',
+      'Design atemporal para uso diário ou ocasiões especiais',
+      'Baixa automática de estoque por SKU via Bling ERP',
+    ],
+    createdAt: '2026-11-11T16:00:00Z',
+    images: [
+      {
+        id: 'gid://shopify/ProductImage/9021',
+        url: '/assets/products/colar-pedra-1.png',
+        altText: 'Joia Prata 925 com Pedra Natural Abalone — Casa da Prata',
+      },
+      {
+        id: 'gid://shopify/ProductImage/9022',
+        url: '/assets/products/colar-pedra-2.png',
+        altText: 'Detalhe da pedra natural iridescente em moldura de Prata 925',
+      },
+    ],
+    variants: [
+      {
+        id: 'gid://shopify/ProductVariant/925201',
+        title: 'Aro 15',
+        sku: 'CDP-AN-TUR-15',
+        price: 175.0,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 3,
+      },
+      {
+        id: 'gid://shopify/ProductVariant/925202',
+        title: 'Aro 17',
+        sku: 'CDP-AN-TUR-17',
+        price: 175.0,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 5,
+      },
+      {
+        id: 'gid://shopify/ProductVariant/925203',
+        title: 'Aro 19',
+        sku: 'CDP-AN-TUR-19',
+        price: 175.0,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 2,
+      },
+    ],
+  },
+  {
+    id: 'gid://shopify/Product/925003',
+    title: 'Anel Solitário & Ponto de Luz em Prata 925 Cravejado',
+    handle: 'anel-solitario-prata-925-cravejado',
+    category: 'Anéis & Pedras Naturais',
+    description:
+      'Design clássico de alta luminosidade em Prata 925 legítima com lapidação brilhante de múltiplas facetas e cravação de precisão que realça a entrada de luz.',
+    details: [
+      'Lapidação brilhante de alto índice de refração fixada por garras em Prata 925',
+      'Acabamento espelhado hipoalergênico com garantia vitalícia do teor 925',
+      'Ideal para uso solo ou composição com alianças e pontos de luz',
+      'SKU individualizado por aro no depósito de Goiânia',
+    ],
+    createdAt: '2026-11-10T14:00:00Z',
+    images: [
+      {
+        id: 'gid://shopify/ProductImage/9031',
+        url: '/assets/products/anel-solitario-real-1.png',
+        altText: 'Anel Solitário e Conjunto Ponto de Luz em Prata 925 — Casa da Prata',
+      },
+      {
+        id: 'gid://shopify/ProductImage/9032',
+        url: '/assets/products/anel-solitario-real-2.png',
+        altText: 'Macro do solitário cravejado em Prata 925 legítima',
+      },
+    ],
+    variants: [
+      {
+        id: 'gid://shopify/ProductVariant/925301',
+        title: 'Aro 14',
+        sku: 'CDP-AN-PER-14',
+        price: 164.9,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 5,
+      },
+      {
+        id: 'gid://shopify/ProductVariant/925302',
+        title: 'Aro 16',
+        sku: 'CDP-AN-PER-16',
+        price: 164.9,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 6,
+      },
+      {
+        id: 'gid://shopify/ProductVariant/925303',
+        title: 'Aro 18',
+        sku: 'CDP-AN-PER-18',
+        price: 164.9,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 1,
+      },
+    ],
+  },
+  {
+    id: 'gid://shopify/Product/925004',
+    title: 'Pulseira Prata 925 Veneziana / Snake com Berloque Cravejado',
+    handle: 'pulseira-prata-925-snake-berloque',
+    category: 'Pulseiras & Masculino',
+    description:
+      'Pulseira em Prata 925 maciça com malha flexível de alto brilho e acabamento polido, compatível com berloques e pingentes colecionáveis em Prata de Lei.',
+    details: [
+      'Prata 925 maciça com polimento espelhado e alta resistência',
+      'Estrutura flexível confortável para uso diário',
+      'Disponível nos comprimentos 19cm, 20cm e 21cm',
+      'Envio segurado imediato via Bling + Shopify',
+    ],
+    createdAt: '2026-11-09T11:30:00Z',
+    images: [
+      {
+        id: 'gid://shopify/ProductImage/9041',
+        url: '/assets/products/pulseira-berloque-1.png',
+        altText: 'Pulseira Prata 925 com Berloque — Casa da Prata',
+      },
+      {
+        id: 'gid://shopify/ProductImage/9042',
+        url: '/assets/products/pulseira-berloque-2.png',
+        altText: 'Detalhe do acabamento em Prata 925 maciça',
+      },
+    ],
+    variants: [
+      {
+        id: 'gid://shopify/ProductVariant/925401',
+        title: '20cm / 6mm',
+        sku: 'CDP-PUL-GRU-20',
+        price: 349.9,
+        compareAtPrice: 399.0,
+        availableForSale: true,
+        quantityAvailable: 6,
+      },
+      {
+        id: 'gid://shopify/ProductVariant/925402',
+        title: '21cm / 8mm',
+        sku: 'CDP-PUL-GRU-21',
+        price: 349.9,
+        compareAtPrice: 399.0,
+        availableForSale: true,
+        quantityAvailable: 2,
+      },
+    ],
+  },
+  {
+    id: 'gid://shopify/Product/925005',
+    title: 'Pulseira Bracelete de Prata 925 Trabalhada Estilo Bali',
+    handle: 'pulseira-prata-925-bali-trabalhada',
+    category: 'Pulseiras & Masculino',
+    description:
+      'Bracelete artesanal em Prata 925 legítima com fios múltiplos estruturados e nós balineses trabalhados à mão, unindo presença escultural e tradição de ourivesaria.',
+    details: [
+      'Prata 925 legítima com trabalho artesanal de fios e nós estilo Bali',
+      'Estrutura firme e anatômica de alta durabilidade no pulso',
+      'Peça unissex atemporal para uso solo ou em composição',
+      'Acompanha certificado de garantia vitalícia Casa da Prata',
+    ],
+    createdAt: '2026-11-08T09:45:00Z',
+    images: [
+      {
+        id: 'gid://shopify/ProductImage/9051',
+        url: '/assets/products/pulseira-bali-real-1.png',
+        altText: 'Pulseira Bracelete de Prata 925 Trabalhada Estilo Bali — Casa da Prata',
+      },
+      {
+        id: 'gid://shopify/ProductImage/9052',
+        url: '/assets/products/pulseira-bali-real-2.png',
+        altText: 'Detalhe central da trama artesanal em Prata 925',
+      },
+      {
+        id: 'gid://shopify/ProductImage/9053',
+        url: '/assets/products/pulseira-coracao-1.png',
+        altText: 'Opção de pulseira em Prata 925 com fecho cravejado',
+      },
+    ],
+    variants: [
+      {
+        id: 'gid://shopify/ProductVariant/925501',
+        title: '19cm',
+        sku: 'CDP-PUL-BAL-19',
+        price: 289.0,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 4,
+      },
+      {
+        id: 'gid://shopify/ProductVariant/925502',
+        title: '21cm',
+        sku: 'CDP-PUL-BAL-21',
+        price: 289.0,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 3,
+      },
+    ],
+  },
+  {
+    id: 'gid://shopify/Product/925006',
+    title: 'Brinco Argola Prata 925 Legítima Fecho Italiano',
+    handle: 'brinco-argola-prata-925-fecho-italiano',
+    category: 'Brincos & Argolas',
+    description:
+      'Par de brincos argola em Prata 925 de Lei com perfil tubular polido e fecho italiano articulado de encaixe seguro. Leveza ideal para uso contínuo.',
+    details: [
+      'Prata 925 hipoalergênica livre de níquel',
+      'Construção tubular leve que não pesa na orelha',
+      'Fecho italiano articulado de travamento firme',
+      'Três diâmetros: 2cm (P), 3,5cm (M) e 5cm (G)',
+    ],
+    createdAt: '2026-11-07T15:20:00Z',
+    images: [
+      {
+        id: 'gid://shopify/ProductImage/9061',
+        url: '/assets/products/argola-prata-1.png',
+        altText: 'Brinco Argola Prata 925 Fecho Italiano — Casa da Prata',
+      },
+      {
+        id: 'gid://shopify/ProductImage/9062',
+        url: '/assets/products/argola-prata-2.png',
+        altText: 'Detalhe do fecho italiano e polimento da argola em Prata 925',
+      },
+    ],
+    variants: [
+      {
+        id: 'gid://shopify/ProductVariant/925601',
+        title: 'Pequena 2cm',
+        sku: 'CDP-BRI-ARG-P',
+        price: 119.9,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 8,
+      },
+      {
+        id: 'gid://shopify/ProductVariant/925602',
+        title: 'Média 3.5cm',
+        sku: 'CDP-BRI-ARG-M',
+        price: 119.9,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 5,
+      },
+      {
+        id: 'gid://shopify/ProductVariant/925603',
+        title: 'Grande 5cm',
+        sku: 'CDP-BRI-ARG-G',
+        price: 119.9,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 2,
+      },
+    ],
+  },
+  {
+    id: 'gid://shopify/Product/925007',
+    title: 'Joia Religiosa Cruz & Devoção em Prata 925 Legítima',
+    handle: 'joia-religiosa-cruz-prata-925-legitima',
+    category: 'Religiosos',
+    description:
+      'Peça devocional confeccionada integralmente em Prata 925 de Lei com acabamento espelhado, esferas polidas e cruz maciça de corte preciso.',
+    details: [
+      'Confeccionada em Prata 925 maciça com garantia vitalícia',
+      'Acabamento polido espelhado resistente à oxidação',
+      'Acompanha caixa presenteável exclusiva e certificado vitalício',
+      'Últimas unidades do lote atual em estoque',
+    ],
+    createdAt: '2026-11-06T13:10:00Z',
+    images: [
+      {
+        id: 'gid://shopify/ProductImage/9071',
+        url: '/assets/products/brinco-cruz-1.png',
+        altText: 'Joia Religiosa Cruz em Prata 925 Legítima — Casa da Prata',
+      },
+      {
+        id: 'gid://shopify/ProductImage/9072',
+        url: '/assets/products/brinco-cruz-2.png',
+        altText: 'Detalhe da cruz maciça e acabamento em Prata 925',
+      },
+    ],
+    variants: [
+      {
+        id: 'gid://shopify/ProductVariant/925701',
+        title: 'Tamanho Padrão',
+        sku: 'CDP-REL-TER-01',
+        price: 259.9,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 3,
+      },
+    ],
+  },
+  {
+    id: 'gid://shopify/Product/925008',
+    title: 'Alianças & Joias Personalizadas Sob Encomenda (Prata 925 / Ouro 18k)',
+    handle: 'aliancas-joias-personalizadas-sob-encomenda',
+    category: 'Sob Encomenda',
+    description:
+      'Joia exclusiva feita sob encomenda na bancada da Casa da Prata em Goiânia: alianças trabalhadas, gravação interna personalizada ou colares com nome em Prata 925 e Ouro 18k.',
+    details: [
+      'Produção personalizada na bancada da Casa da Prata (prazo de 7 dias úteis)',
+      'Gravação interna ou recorte de nome inclusos sob medida',
+      'Disponível em Prata 925 maciça ou sob orçamento em Ouro 18k',
+      'Solicite ajustes de largura, aro ou fonte direto pelo WhatsApp',
+    ],
+    isCustomOrder: true,
+    createdAt: '2026-11-05T10:00:00Z',
+    images: [
+      {
+        id: 'gid://shopify/ProductImage/9081',
+        url: '/assets/products/aliancas-prata-1.png',
+        altText: 'Alianças e Joias Personalizadas em Prata 925 — Casa da Prata',
+      },
+      {
+        id: 'gid://shopify/ProductImage/9082',
+        url: '/assets/products/aliancas-prata-2.png',
+        altText: 'Detalhe da textura artesanal das alianças em Prata 925',
+      },
+      {
+        id: 'gid://shopify/ProductImage/9083',
+        url: '/assets/products/pulseira-coracao-1.png',
+        altText: 'Joia em Prata 925 com cravação personalizada Casa da Prata',
+      },
+    ],
+    variants: [
+      {
+        id: 'gid://shopify/ProductVariant/925801',
+        title: 'Corrente Veneziana 40cm',
+        sku: 'CDP-ENC-NOM-40',
+        price: 219.9,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 99,
+      },
+      {
+        id: 'gid://shopify/ProductVariant/925802',
+        title: 'Corrente Veneziana 45cm',
+        sku: 'CDP-ENC-NOM-45',
+        price: 219.9,
+        compareAtPrice: null,
+        availableForSale: true,
+        quantityAvailable: 99,
+      },
+    ],
+  },
+];
