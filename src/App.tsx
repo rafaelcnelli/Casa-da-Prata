@@ -348,7 +348,7 @@ export default function App() {
               <div className="bg-white border border-black/10 p-3 shadow-sm">
                 <div className="aspect-[4/3] bg-black overflow-hidden">
                   <ResilientImage
-                    src="/assets/products/aliancas-prata-1.png"
+                    src="./assets/products/aliancas-prata-1.png"
                     alt="Alianças e Anéis Sob Encomenda em Prata 925 Casa da Prata"
                     className="w-full h-full object-cover"
                   />
@@ -364,7 +364,7 @@ export default function App() {
               <div className="bg-white border border-black/10 p-3 shadow-sm">
                 <div className="aspect-[4/3] bg-black overflow-hidden">
                   <ResilientImage
-                    src="/assets/products/pulseira-coracao-1.png"
+                    src="./assets/products/pulseira-coracao-1.png"
                     alt="Pulseira Prata 925 Fecho Coração Cravejado Casa da Prata"
                     className="w-full h-full object-cover"
                   />

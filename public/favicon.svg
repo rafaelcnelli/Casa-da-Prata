@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="silverGrad" x1="16" y1="16" x2="112" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="45%" stop-color="#CBD5E1" />
+      <stop offset="75%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#F8FAFC" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="#0B0B0B" />
+  <circle cx="64" cy="64" r="48" stroke="url(#silverGrad)" stroke-width="3.5" />
+  <circle cx="64" cy="64" r="41" stroke="url(#silverGrad)" stroke-width="1.5" stroke-opacity="0.65" />
+  <!-- Diamond Emblem (Casa da Prata Crest) -->
+  <polygon points="44,44 84,44 96,58 64,96 32,58" fill="url(#silverGrad)" />
+  <polyline points="32,58 96,58" stroke="#0B0B0B" stroke-width="2.5" />
+  <polyline points="44,44 54,58 64,44 74,58 84,44" stroke="#0B0B0B" stroke-width="2.2" fill="none" />
+  <polyline points="54,58 64,96 74,58" stroke="#0B0B0B" stroke-width="2.2" fill="none" />
+</svg>

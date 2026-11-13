@@ -1,0 +1,22 @@
+{
+  "name": "Casa da Prata — Joalheria e Pedrarias · Prata 925",
+  "short_name": "Casa da Prata",
+  "description": "Joalheria especializada em Prata 925 legítima, pedras naturais selecionadas e peças sob encomenda em Goiânia - GO.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F4F3EF",
+  "theme_color": "#0B0B0B",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/aistudio/image_4e988782.png",
+      "sizes": "448x446",
+      "type": "image/png"
+    }
+  ]
+}

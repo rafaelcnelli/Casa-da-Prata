@@ -5,7 +5,8 @@ interface HeroProps {
   onSelectCategory: (category: string) => void;
 }
 
-export const HERO_BANNER_ARTWORK = '/assets/aistudio/image_3b1fd7dc.png';
+export const HERO_BANNER_ARTWORK =
+  './assets/aistudio/banner_casa_prata_anel.jpg';
 
 export function Hero({ onSelectCategory }: HeroProps) {
   const scrollToCatalog = (category?: string) => {
@@ -48,7 +49,7 @@ export function Hero({ onSelectCategory }: HeroProps) {
           </div>
         </div>
 
-        {/* Main Editorial Banner Artwork (Imagem 2: "Casa da Prata" High-Contrast Serif + Drop Earrings) */}
+        {/* Main Editorial Banner Artwork ("Casa da Prata" High-Contrast Serif + Silver 925 Emerald-Cut Green Stone Ring) */}
         <div className="relative my-2 sm:my-4 flex items-center justify-center">
           <h1 className="sr-only">
             Casa da Prata — Joalheria Especializada em Prata 925, Pedras Naturais e Joias Sob Encomenda
@@ -56,7 +57,7 @@ export function Hero({ onSelectCategory }: HeroProps) {
           <div className="w-full max-w-6xl mx-auto overflow-hidden bg-[#FFFFFF]">
             <ResilientImage
               src={HERO_BANNER_ARTWORK}
-              alt="Casa da Prata — Alta Joalheria em Prata 925 e Pedrarias"
+              alt="Casa da Prata — Anel em Prata 925 com Pedra Natural Verde Lapidação Esmeralda"
               className="w-full h-auto max-h-[340px] sm:max-h-[450px] lg:max-h-[520px] object-contain mx-auto select-none"
             />
           </div>
@@ -105,7 +106,7 @@ export function Hero({ onSelectCategory }: HeroProps) {
           <div className="flex items-center gap-4 sm:gap-5 bg-white/[0.03] border border-white/10 p-3.5">
             <div className="w-20 h-24 sm:w-24 sm:h-28 bg-black shrink-0 overflow-hidden border border-white/10">
               <ResilientImage
-                src="/assets/products/anel-pedra-natural-1.png"
+                src="./assets/products/anel-pedra-natural-1.png"
                 alt="Anéis e Pedras Naturais em Prata 925 Casa da Prata"
                 className="w-full h-full object-cover"
               />
@@ -131,7 +132,7 @@ export function Hero({ onSelectCategory }: HeroProps) {
           <div className="flex items-center gap-4 sm:gap-5 bg-white/[0.03] border border-white/10 p-3.5">
             <div className="w-20 h-24 sm:w-24 sm:h-28 bg-black shrink-0 overflow-hidden border border-white/10">
               <ResilientImage
-                src="/assets/products/pulseira-bali-real-1.png"
+                src="./assets/products/pulseira-bali-real-1.png"
                 alt="Pulseiras e braceletes em Prata 925 Casa da Prata"
                 className="w-full h-full object-cover"
               />
@@ -157,7 +158,7 @@ export function Hero({ onSelectCategory }: HeroProps) {
           <div className="flex items-center gap-4 sm:gap-5 bg-white/[0.03] border border-white/10 p-3.5">
             <div className="w-20 h-24 sm:w-24 sm:h-28 bg-black shrink-0 overflow-hidden border border-white/10">
               <ResilientImage
-                src="/assets/products/argola-prata-1.png"
+                src="./assets/products/argola-prata-1.png"
                 alt="Brincos Argolas e Joias Religiosas em Prata 925 Casa da Prata"
                 className="w-full h-full object-cover"
               />

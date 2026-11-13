@@ -1,6 +1,6 @@
 import type { Product } from '../types/commerce';
 
-export const CASA_DA_PRATA_LOGO = '/assets/aistudio/image_4e988782.png';
+export const CASA_DA_PRATA_LOGO = './assets/aistudio/image_4e988782.png';
 
 export const MOCK_PRODUCTS: Product[] = [
   {
@@ -20,12 +20,12 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       {
         id: 'gid://shopify/ProductImage/9011',
-        url: '/assets/products/anel-pedra-natural-1.png',
+        url: './assets/products/anel-pedra-natural-1.png',
         altText: 'Anel de Prata 925 com Pedra Natural Lapidada — Casa da Prata',
       },
       {
         id: 'gid://shopify/ProductImage/9012',
-        url: '/assets/products/anel-pedra-natural-2.png',
+        url: './assets/products/anel-pedra-natural-2.png',
         altText: 'Detalhe da lapidação da Pedra Natural e cravação em Prata 925',
       },
     ],
@@ -76,12 +76,12 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       {
         id: 'gid://shopify/ProductImage/9021',
-        url: '/assets/products/colar-pedra-1.png',
+        url: './assets/products/colar-pedra-1.png',
         altText: 'Joia Prata 925 com Pedra Natural Abalone — Casa da Prata',
       },
       {
         id: 'gid://shopify/ProductImage/9022',
-        url: '/assets/products/colar-pedra-2.png',
+        url: './assets/products/colar-pedra-2.png',
         altText: 'Detalhe da pedra natural iridescente em moldura de Prata 925',
       },
     ],
@@ -132,12 +132,12 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       {
         id: 'gid://shopify/ProductImage/9031',
-        url: '/assets/products/anel-solitario-real-1.png',
+        url: './assets/products/anel-solitario-real-1.png',
         altText: 'Anel Solitário e Conjunto Ponto de Luz em Prata 925 — Casa da Prata',
       },
       {
         id: 'gid://shopify/ProductImage/9032',
-        url: '/assets/products/anel-solitario-real-2.png',
+        url: './assets/products/anel-solitario-real-2.png',
         altText: 'Macro do solitário cravejado em Prata 925 legítima',
       },
     ],
@@ -188,12 +188,12 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       {
         id: 'gid://shopify/ProductImage/9041',
-        url: '/assets/products/pulseira-berloque-1.png',
+        url: './assets/products/pulseira-berloque-1.png',
         altText: 'Pulseira Prata 925 com Berloque — Casa da Prata',
       },
       {
         id: 'gid://shopify/ProductImage/9042',
-        url: '/assets/products/pulseira-berloque-2.png',
+        url: './assets/products/pulseira-berloque-2.png',
         altText: 'Detalhe do acabamento em Prata 925 maciça',
       },
     ],
@@ -235,17 +235,17 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       {
         id: 'gid://shopify/ProductImage/9051',
-        url: '/assets/products/pulseira-bali-real-1.png',
+        url: './assets/products/pulseira-bali-real-1.png',
         altText: 'Pulseira Bracelete de Prata 925 Trabalhada Estilo Bali — Casa da Prata',
       },
       {
         id: 'gid://shopify/ProductImage/9052',
-        url: '/assets/products/pulseira-bali-real-2.png',
+        url: './assets/products/pulseira-bali-real-2.png',
         altText: 'Detalhe central da trama artesanal em Prata 925',
       },
       {
         id: 'gid://shopify/ProductImage/9053',
-        url: '/assets/products/pulseira-coracao-1.png',
+        url: './assets/products/pulseira-coracao-1.png',
         altText: 'Opção de pulseira em Prata 925 com fecho cravejado',
       },
     ],
@@ -287,12 +287,12 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       {
         id: 'gid://shopify/ProductImage/9061',
-        url: '/assets/products/argola-prata-1.png',
+        url: './assets/products/argola-prata-1.png',
         altText: 'Brinco Argola Prata 925 Fecho Italiano — Casa da Prata',
       },
       {
         id: 'gid://shopify/ProductImage/9062',
-        url: '/assets/products/argola-prata-2.png',
+        url: './assets/products/argola-prata-2.png',
         altText: 'Detalhe do fecho italiano e polimento da argola em Prata 925',
       },
     ],
@@ -343,12 +343,12 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       {
         id: 'gid://shopify/ProductImage/9071',
-        url: '/assets/products/brinco-cruz-1.png',
+        url: './assets/products/brinco-cruz-1.png',
         altText: 'Joia Religiosa Cruz em Prata 925 Legítima — Casa da Prata',
       },
       {
         id: 'gid://shopify/ProductImage/9072',
-        url: '/assets/products/brinco-cruz-2.png',
+        url: './assets/products/brinco-cruz-2.png',
         altText: 'Detalhe da cruz maciça e acabamento em Prata 925',
       },
     ],
@@ -382,17 +382,17 @@ export const MOCK_PRODUCTS: Product[] = [
     images: [
       {
         id: 'gid://shopify/ProductImage/9081',
-        url: '/assets/products/aliancas-prata-1.png',
+        url: './assets/products/aliancas-prata-1.png',
         altText: 'Alianças e Joias Personalizadas em Prata 925 — Casa da Prata',
       },
       {
         id: 'gid://shopify/ProductImage/9082',
-        url: '/assets/products/aliancas-prata-2.png',
+        url: './assets/products/aliancas-prata-2.png',
         altText: 'Detalhe da textura artesanal das alianças em Prata 925',
       },
       {
         id: 'gid://shopify/ProductImage/9083',
-        url: '/assets/products/pulseira-coracao-1.png',
+        url: './assets/products/pulseira-coracao-1.png',
         altText: 'Joia em Prata 925 com cravação personalizada Casa da Prata',
       },
     ],
