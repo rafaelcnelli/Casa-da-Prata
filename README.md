@@ -39,9 +39,9 @@ npm run build
 
 ## Deploy no GitHub Pages (Automático via GitHub Actions)
 
-O projeto já inclui o workflow `.github/workflows/deploy.yml` e configuração `base: './'` no `vite.config.ts`:
+O projeto já inclui o workflow `.github/workflows/deploy.yml`, `.npmrc` (`legacy-peer-deps=true`), `package-lock.json` e configuração `base: './'` no `vite.config.ts`:
 
-1. Suba o repositório para o GitHub (`git push origin main`).
-2. No GitHub, acesse **Settings → Pages**.
-3. Em **Build and deployment → Source**, selecione **GitHub Actions**.
-4. A cada push na branch `main`, o workflow executa a checagem de tipos, roda os testes unitários, gera o bundle em `./dist` e publica automaticamente no GitHub Pages.
+1. No seu repositório do GitHub, acesse **Settings → Pages**.
+2. Em **Build and deployment → Source**, altere de *Deploy from a branch* para **GitHub Actions** (passo obrigatório no GitHub para autorizar a publicação pela Action).
+3. Suba as alterações para o GitHub (`git push origin main`).
+4. Na aba **Actions**, o workflow **Deploy Casa da Prata to GitHub Pages** executará a checagem TypeScript (`npm run lint`), os testes unitários, o build em `./dist` (com `.nojekyll` e `404.html`) e publicará o site automaticamente.
