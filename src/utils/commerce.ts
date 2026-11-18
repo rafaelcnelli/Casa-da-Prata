@@ -183,6 +183,88 @@ export function buildWhatsAppQuoteUrl(
   return `https://wa.me/${WHATSAPP_STORE_PHONE}?text=${message}`;
 }
 
+export function buildWhatsAppProductOrderUrl(
+  productTitle: string,
+  variantTitle: string,
+  sku: string,
+  unitPrice: number,
+  customNote?: string,
+  isSoldOut?: boolean
+): string {
+  const trimmedNote = customNote?.trim();
+  const pixPrice = calculatePixPrice(unitPrice);
+  const lines = [
+    isSoldOut
+      ? 'Olá, Casa da Prata! Gostaria de consultar previsão ou encomendar esta joia:'
+      : 'Olá, Casa da Prata! Gostaria de pedir esta joia:',
+    `• Peça: ${productTitle}`,
+    `• Opção: ${variantTitle}`,
+    `• SKU: ${sku}`,
+    `• Valor: ${formatBRL(unitPrice)} (${formatBRL(pixPrice)} no Pix com 5% OFF)`,
+  ];
+  if (trimmedNote) {
+    lines.push(`• Personalização / Gravação: ${trimmedNote}`);
+  }
+  const message = encodeURIComponent(lines.join('\n'));
+  return `https://wa.me/${WHATSAPP_STORE_PHONE}?text=${message}`;
+}
+
+export function buildWhatsAppCartOrderUrl(
+  items: CartItem[],
+  customerNote?: string
+): string {
+  if (items.length === 0) {
+    return `https://wa.me/${WHATSAPP_STORE_PHONE}`;
+  }
+
+  const totals = calculateCartTotals(items);
+  const shipping = calculateFreeShippingProgress(totals.subtotal);
+  const trimmedCustomerNote = customerNote?.trim();
+
+  const itemLines = items.flatMap((item, index) => {
+    const lineTotal = roundCurrency(item.variant.price * item.quantity);
+    const lines = [
+      `${index + 1}. ${item.productTitle}`,
+      `   Opção: ${item.variant.title} | SKU: ${item.variant.sku}`,
+      `   Qtd: ${item.quantity}x ${formatBRL(item.variant.price)} = ${formatBRL(lineTotal)}`,
+    ];
+    if (item.customNote?.trim()) {
+      lines.push(`   Personalização: ${item.customNote.trim()}`);
+    }
+    return lines;
+  });
+
+  const summaryLines = [
+    '',
+    '*Resumo do Pedido:*',
+    `• Itens: ${totals.itemCount}`,
+    `• Subtotal: ${formatBRL(totals.subtotal)}`,
+    `• Desconto Pix (5% OFF): -${formatBRL(totals.pixDiscount)}`,
+    `• *Total no Pix: ${formatBRL(totals.pixTotal)}*`,
+    `• Cartão: 6x de ${formatBRL(calculateInstallmentPrice(totals.subtotal))} sem juros`,
+    `• Entrega: ${
+      shipping.unlocked
+        ? 'Frete Grátis Segurado (acima de R$ 249,00)'
+        : 'A combinar (Entrega Expressa Goiânia / Correios)'
+    }`,
+  ];
+
+  if (trimmedCustomerNote) {
+    summaryLines.push(`• Cliente / Observações: ${trimmedCustomerNote}`);
+  }
+
+  summaryLines.push('', 'Aguardo as instruções para pagamento e envio!');
+
+  const fullMessage = [
+    'Olá, Casa da Prata! Montei minha sacola no site e gostaria de finalizar este pedido:',
+    '',
+    ...itemLines,
+    ...summaryLines,
+  ].join('\n');
+
+  return `https://wa.me/${WHATSAPP_STORE_PHONE}?text=${encodeURIComponent(fullMessage)}`;
+}
+
 export function buildCheckoutPayload(
   items: CartItem[],
   mode: 'mock' | 'shopify'

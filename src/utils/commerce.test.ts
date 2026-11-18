@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   buildCheckoutPayload,
+  buildWhatsAppCartOrderUrl,
+  buildWhatsAppProductOrderUrl,
   buildWhatsAppQuoteUrl,
   calculateCartTotals,
   calculateDiscountPercentage,
@@ -144,6 +146,54 @@ test('buildWhatsAppQuoteUrl encodes piece title, variant, Bling SKU, and custom 
   const decoded = decodeURIComponent(url);
   assert.ok(decoded.includes('CDP-ENC-NOM-45'));
   assert.ok(decoded.includes('Maria Clara'));
+});
+
+test('buildWhatsAppProductOrderUrl formats single-product WhatsApp order with Pix price and SKU', () => {
+  const url = buildWhatsAppProductOrderUrl(
+    'Anel de Prata 925 com Ametista Natural',
+    'Aro 18',
+    'CDP-AN-AME-18',
+    189.9
+  );
+  assert.ok(url.startsWith('https://wa.me/'));
+  const decoded = decodeURIComponent(url);
+  assert.ok(decoded.includes('Anel de Prata 925 com Ametista Natural'));
+  assert.ok(decoded.includes('Aro 18'));
+  assert.ok(decoded.includes('CDP-AN-AME-18'));
+  assert.ok(decoded.includes('180,41'));
+});
+
+test('buildWhatsAppCartOrderUrl formats complete multi-item cart order with totals and notes', () => {
+  const items: CartItem[] = [
+    {
+      productId: sampleProducts[0].id,
+      productTitle: sampleProducts[0].title,
+      productHandle: sampleProducts[0].handle,
+      image: sampleProducts[0].images[0],
+      variant: sampleProducts[0].variants[0],
+      quantity: 1,
+    },
+    {
+      productId: sampleProducts[1].id,
+      productTitle: sampleProducts[1].title,
+      productHandle: sampleProducts[1].handle,
+      image: sampleProducts[1].images[0],
+      variant: sampleProducts[1].variants[0],
+      quantity: 1,
+      customNote: 'Maria Clara',
+    },
+  ];
+
+  const url = buildWhatsAppCartOrderUrl(items, 'Mariana · Goiânia');
+  assert.ok(url.startsWith('https://wa.me/'));
+  const decoded = decodeURIComponent(url);
+  assert.ok(decoded.includes('1. Anel de Prata 925 com Ametista Natural'));
+  assert.ok(decoded.includes('2. Colar Personalizado com Nome em Prata 925'));
+  assert.ok(decoded.includes('CDP-AN-AME-18'));
+  assert.ok(decoded.includes('CDP-ENC-NOM-45'));
+  assert.ok(decoded.includes('Maria Clara'));
+  assert.ok(decoded.includes('Mariana · Goiânia'));
+  assert.ok(decoded.includes('Frete Grátis Segurado'));
 });
 
 test('calculateCartTotals and buildCheckoutPayload map SKUs and customNote for Bling + Shopify', () => {

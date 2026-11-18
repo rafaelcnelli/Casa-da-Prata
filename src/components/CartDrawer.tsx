@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
   AlertCircle,
   ArrowRight,
   Loader2,
+  MessageCircle,
   Minus,
   Plus,
   ShoppingBag,
@@ -13,6 +14,7 @@ import {
 import type { CartItem } from '../types/commerce';
 import {
   FREE_SHIPPING_THRESHOLD,
+  buildWhatsAppCartOrderUrl,
   calculateCartTotals,
   calculateFreeShippingProgress,
   formatBRL,
@@ -46,6 +48,8 @@ export function CartDrawer({
   onRemoveItem,
   onCheckout,
 }: CartDrawerProps) {
+  const [customerNote, setCustomerNote] = useState('');
+
   useEffect(() => {
     if (!isOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -64,6 +68,7 @@ export function CartDrawer({
     totals.subtotal,
     FREE_SHIPPING_THRESHOLD
   );
+  const whatsappOrderUrl = buildWhatsAppCartOrderUrl(items, customerNote);
 
   return (
     <div
@@ -304,30 +309,65 @@ export function CartDrawer({
               </div>
             </div>
 
-            <button
-              type="button"
-              disabled={isCheckingOut}
-              onClick={onCheckout}
-              data-testid="checkout-button"
-              className="w-full h-12 bg-[#0F172A] text-white rounded-md text-sm font-semibold hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-wait focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F172A] focus-visible:ring-offset-2"
-            >
-              {isCheckingOut ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
-                  <span>Gerando Checkout Shopify...</span>
-                </>
-              ) : (
-                <>
-                  <span>Finalizar Compra Segura</span>
-                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </>
-              )}
-            </button>
+            <div className="space-y-1.5">
+              <label
+                htmlFor="cart-customer-note"
+                className="block text-[11px] font-semibold uppercase tracking-wider text-slate-600"
+              >
+                Seu nome / Bairro ou CEP (opcional)
+              </label>
+              <input
+                id="cart-customer-note"
+                type="text"
+                maxLength={100}
+                value={customerNote}
+                onChange={(e) => setCustomerNote(e.target.value)}
+                placeholder="Ex: Ana Paula · Setor Bueno, Goiânia"
+                className="w-full h-9 px-3 bg-white border border-slate-300 rounded-md text-xs text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:border-[#0F172A]"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <a
+                href={whatsappOrderUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="whatsapp-cart-order-button"
+                className="w-full h-12 bg-emerald-700 text-white rounded-md text-sm font-semibold hover:bg-emerald-800 transition-colors flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 focus-visible:ring-offset-2"
+              >
+                <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
+                <span>Enviar Pedido pelo WhatsApp</span>
+              </a>
+
+              <button
+                type="button"
+                disabled={isCheckingOut}
+                onClick={onCheckout}
+                data-testid="checkout-button"
+                className="w-full h-10 bg-white border border-slate-300 text-[#0F172A] rounded-md text-xs font-semibold hover:bg-slate-100 transition-colors flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-wait focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F172A] focus-visible:ring-offset-2"
+              >
+                {isCheckingOut ? (
+                  <>
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+                    <span>Gerando Checkout Shopify...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>
+                      {useMockData
+                        ? 'Ver Payload JSON (Shopify + Bling)'
+                        : 'Checkout Online Shopify'}
+                    </span>
+                    <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+                  </>
+                )}
+              </button>
+            </div>
 
             <p className="text-[11px] text-center text-slate-500">
               {useMockData
-                ? 'Modo Mock ativo: gera simulação do payload JSON Shopify + Bling.'
-                : 'Modo Shopify Live ativo: redireciona para o checkout oficial.'}
+                ? 'Atendimento provisório: envie sua sacola montada direto para o WhatsApp da Casa da Prata.'
+                : 'Envie pelo WhatsApp ou conclua direto no checkout oficial Shopify.'}
             </p>
           </div>
         )}

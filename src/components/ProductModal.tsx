@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import type { CartItem, Product, ProductVariant } from '../types/commerce';
 import {
+  buildWhatsAppProductOrderUrl,
   buildWhatsAppQuoteUrl,
   calculateDiscountPercentage,
   calculateInstallmentPrice,
@@ -97,12 +98,21 @@ export function ProductModal({
   const pixPrice = calculatePixPrice(selectedVariant.price);
   const installmentPrice = calculateInstallmentPrice(selectedVariant.price);
 
-  const whatsappUrl = buildWhatsAppQuoteUrl(
-    product.title,
-    selectedVariant.title,
-    selectedVariant.sku,
-    customNote
-  );
+  const whatsappUrl = product.isCustomOrder
+    ? buildWhatsAppQuoteUrl(
+        product.title,
+        selectedVariant.title,
+        selectedVariant.sku,
+        customNote
+      )
+    : buildWhatsAppProductOrderUrl(
+        product.title,
+        selectedVariant.title,
+        selectedVariant.sku,
+        selectedVariant.price,
+        undefined,
+        isOutOfStock
+      );
 
   const handleAddClick = () => {
     if (isOutOfStock || reachedCartLimit) return;
@@ -341,40 +351,27 @@ export function ProductModal({
 
               {/* Hybrid Flow for Custom / Made-to-Order Jewelry */}
               {product.isCustomOrder && (
-                <div className="p-4 rounded-lg bg-[#F8FAFC] border border-slate-200 space-y-3">
-                  <div>
-                    <label
-                      htmlFor="custom-engraving-input"
-                      className="block text-xs font-semibold text-[#0F172A] mb-1.5"
-                    >
-                      Digite o nome para gravação ou especificações
-                    </label>
-                    <input
-                      id="custom-engraving-input"
-                      type="text"
-                      maxLength={60}
-                      value={customNote}
-                      onChange={(e) => setCustomNote(e.target.value)}
-                      placeholder="Ex: Maria Clara · Fonte cursiva ou aro Ouro 18k"
-                      className="w-full h-10 px-3 bg-white border border-slate-300 rounded-md text-xs text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:border-[#0F172A]"
-                    />
-                  </div>
-
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid="whatsapp-quote-link"
-                    className="w-full h-10 px-4 rounded-md border border-emerald-700/40 bg-emerald-50 text-emerald-900 hover:bg-emerald-100 text-xs font-semibold flex items-center justify-center gap-2 transition-colors"
+                <div className="p-4 rounded-lg bg-[#F8FAFC] border border-slate-200">
+                  <label
+                    htmlFor="custom-engraving-input"
+                    className="block text-xs font-semibold text-[#0F172A] mb-1.5"
                   >
-                    <MessageCircle className="w-4 h-4 text-emerald-700" aria-hidden="true" />
-                    <span>Orçar / Encomendar via WhatsApp</span>
-                  </a>
+                    Digite o nome para gravação ou especificações
+                  </label>
+                  <input
+                    id="custom-engraving-input"
+                    type="text"
+                    maxLength={60}
+                    value={customNote}
+                    onChange={(e) => setCustomNote(e.target.value)}
+                    placeholder="Ex: Maria Clara · Fonte cursiva ou aro Ouro 18k"
+                    className="w-full h-10 px-3 bg-white border border-slate-300 rounded-md text-xs text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:border-[#0F172A]"
+                  />
                 </div>
               )}
 
-              {/* Primary CTA + Certificate Seal */}
-              <div className="space-y-3">
+              {/* Primary CTAs + Certificate Seal */}
+              <div className="space-y-2.5">
                 <button
                   type="button"
                   disabled={isOutOfStock || reachedCartLimit}
@@ -404,6 +401,23 @@ export function ProductModal({
                     </>
                   )}
                 </button>
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="modal-whatsapp-order"
+                  className="w-full h-11 px-4 rounded-md border border-emerald-700/45 bg-emerald-50 text-emerald-950 hover:bg-emerald-700 hover:text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"
+                >
+                  <MessageCircle className="w-4 h-4 shrink-0" aria-hidden="true" />
+                  <span>
+                    {product.isCustomOrder
+                      ? 'Orçar / Pedir pelo WhatsApp'
+                      : isOutOfStock
+                        ? 'Consultar disponibilidade no WhatsApp'
+                        : 'Pedir pelo WhatsApp'}
+                  </span>
+                </a>
 
                 <div
                   data-testid="prata925-certificate-seal"

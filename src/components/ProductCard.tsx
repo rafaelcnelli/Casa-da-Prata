@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Heart } from 'lucide-react';
+import { Heart, MessageCircle } from 'lucide-react';
 import type { Product } from '../types/commerce';
 import {
+  buildWhatsAppProductOrderUrl,
   calculateDiscountPercentage,
   calculateInstallmentPrice,
   calculatePixPrice,
@@ -50,6 +51,15 @@ export function ProductCard({
     STAGGER_DELAY_CLASSES[
       Math.min(Math.max(0, animationIndex), STAGGER_DELAY_CLASSES.length - 1)
     ];
+
+  const whatsappOrderUrl = buildWhatsAppProductOrderUrl(
+    product.title,
+    primaryVariant.title,
+    primaryVariant.sku,
+    primaryVariant.price,
+    undefined,
+    soldOut
+  );
 
   return (
     <div className={`flex animate-card-fade-in ${delayClass}`}>
@@ -121,7 +131,7 @@ export function ProductCard({
             ) : null}
           </div>
 
-          <div className="p-5 flex flex-col flex-1 justify-between gap-4">
+          <div className="p-5 pb-4 flex flex-col flex-1 justify-between gap-4">
             <div>
               <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
                 {product.category}
@@ -159,6 +169,23 @@ export function ProductCard({
             </div>
           </div>
         </button>
+
+        {/* Direct WhatsApp Order Action per Product */}
+        <div className="px-5 pb-4 pt-0">
+          <a
+            href={whatsappOrderUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid={`card-whatsapp-order-${product.handle}`}
+            aria-label={`Pedir ${product.title} pelo WhatsApp`}
+            className="w-full h-9 px-3 border border-emerald-700/35 bg-emerald-50/70 hover:bg-emerald-700 hover:text-white text-emerald-900 text-[11px] font-bold uppercase tracking-[0.12em] flex items-center justify-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-700"
+          >
+            <MessageCircle className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+            <span>
+              {soldOut ? 'Consultar no WhatsApp' : 'Pedir pelo WhatsApp'}
+            </span>
+          </a>
+        </div>
       </article>
     </div>
   );
